@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>js file</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.js"></script>
+    
+    <script type="text/babel">
+        const rootHandle=document.getElementById('root')
+const users=[
+    {id:1,name:'arjun',isChecked:false},
+    {id:2,name:'priya',isChecked:false},
+    {id:3,name:'neha',isChecked:false},
+    {id:4,name:'geeta',isChecked:false}
+    ]
+const ele=(
+        <div>
+            <ul>
+        {  
+        users.map(user=>{
+                        return <li key={user.id} >
+                        { <input type='checkbox' onClick={()=>{
+                            alert('you selected '+user.name) }}/>}
+
+                        {user.name}</li>
+
+                    })
+        }
+        </ul>
+        </div>
+    )
+ReactDOM.render(ele,rootHandle)
+
+
+        </script>
+</body>
+    </html>
